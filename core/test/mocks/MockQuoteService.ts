@@ -1,11 +1,11 @@
-import { generateResourceId, MockOf } from "@alexslaterio/common";
+import { generateResourceId, MockOf } from "@alexslater-io/common";
 import { QuoteService } from "../../src/lib/services/QuoteService";
 import { Quote } from "../../src/lib/types/Quote";
 export class MockQuoteService implements MockOf<QuoteService> {
 	public reset(): void {
 		console.log("Resetting Mock Quote Service");
 		this.mockedCreateResult = {
-			id: generateResourceId("quote"),
+			id: generateResourceId("quoting", "quote"),
 		};
 		this.numOfCreateCalls = 0;
 	}
@@ -14,7 +14,7 @@ export class MockQuoteService implements MockOf<QuoteService> {
 	}
 
 	public mockedCreateResult: Quote = {
-		id: generateResourceId("quote"),
+		id: generateResourceId("quoting", "quote"),
 	};
 	public numOfCreateCalls: number = 0;
 	public create(): Quote {

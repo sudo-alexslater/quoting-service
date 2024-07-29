@@ -1,4 +1,4 @@
-import { ResourceId } from "@alexslaterio/common";
+import { ResourceId } from "@alexslater-io/common";
 export type Quote = {
 	id: ResourceId;
 };
